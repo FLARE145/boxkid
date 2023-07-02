@@ -5,3 +5,43 @@ p {
 	margin: 20px;
 	max-width: 800px;
 }
+
+.smallPreview{
+	cursor: pointer;
+	height: 200px;
+	display: inline-block;
+}
+
+/*from flare145 website*/
+.popup {
+  display: block;
+  position: fixed;
+  margin: 1% auto 4%;
+  left: 0;
+  right: 0;
+  max-width: min-content;
+  height: -webkit-fill-available;
+  background-color: white;
+  background-image: url(/res/loading.gif);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 4px 12px #0000008c;
+  border-radius: 0em;
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.popup img {
+  height: 100%;
+  width: auto;
+}
+
+.popup-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
