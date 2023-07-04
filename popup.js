@@ -1,7 +1,6 @@
 //borrowed from flare145 website
 
 function openPopup(image) {
-	console.log('bruh');
 	let newpage = document.getElementsByClassName("window")[0];
 	let cover = document.createElement("div");
 	let screenWidth = window.screen.width;
