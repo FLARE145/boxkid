@@ -32,14 +32,14 @@ p {
 
 .footer{
 	text-align: -webkit-center;
-	color: darksalmon;
+	color: grey;
 	padding: 1px;
 	margin: -7px;
-	background-color: bisque;
+	/*background-color: bisque;*/
 }
 
 .footer a{
-	color: darksalmon;
+	color: grey;
 }
 
 /*for concept images*/
