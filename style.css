@@ -5,6 +5,15 @@ body {
 p {
 	margin: 20px;
 	max-width: 800px;
+	font-family: arial;
+}
+
+h1{
+	font-family: courier;
+}
+
+h2{
+	font-family: courier;
 }
 
 .logoDiv{
@@ -17,6 +26,7 @@ p {
 }
 
 .shortcuts a{
+	font-family: arial black;
 	font-size: 25px;
 	color: black;
 	margin: 0px 30px;
