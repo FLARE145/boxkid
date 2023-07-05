@@ -2,13 +2,18 @@ body {
 	background-color: linen;
 }
 
-p {
+main{
+	position: relative;
+	min-height: 96vh;
+}
+
+p{
 	margin: 20px;
 	max-width: 800px;
 	font-family: arial;
 }
 
-a {
+a{
 	font-family: arial;
 }
 
@@ -44,15 +49,22 @@ h2{
 	background-color: orange;
 }
 
-.footer{
+#contentWrap{
+	padding-bottom: 2.5rem;
+}
+
+#footer{
 	text-align: -webkit-center;
 	color: grey;
 	padding: 1px;
 	margin: -7px;
-	/*background-color: bisque;*/
+	
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
-.footer a{
+#footer a{
 	color: grey;
 }
 
