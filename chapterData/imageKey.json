@@ -1,0 +1,24 @@
+{
+	"ch001" : {
+		"page" : [
+			"testImages/1.jpg",
+			"testImages/2.jpg",
+			"testImages/3.jpg",
+			"testImages/4.jpg"
+		],
+		"scroll" : [
+			"put the image url here scrollmode",
+			"next url for image here etc scrollmode"
+		]
+	},
+	"ch002" : {
+		"page" : [
+			"put the image url here",
+			"next url for image here etc"
+		],
+		"scroll" : [
+			"put the image url here scrollmode",
+			"next url for image here etc scrollmode"
+		]
+	}
+}
