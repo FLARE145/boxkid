@@ -118,6 +118,24 @@ h2{
   width: auto;
 }
 
+#comicScrollView{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: fit-content;
+  width: 600px;
+  background-color: white;
+  background-image: url(https://flare145.com/res/loading.gif);
+  background-size: cover;
+  background-position: center;
+}
+
+#comicScrollView img {
+  height: auto;
+  width: 100%;
+  margin-bottom: -4px;
+}
+
 .navBar{
 	margin-top: 5px;
 	margin-bottom: 5px;

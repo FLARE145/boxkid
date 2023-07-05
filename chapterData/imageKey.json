@@ -7,8 +7,11 @@
 			"testImages/4.jpg"
 		],
 		"scroll" : [
-			"put the image url here scrollmode",
-			"next url for image here etc scrollmode"
+			"testImages/s1.jpg",
+			"testImages/s2.jpg",
+			"testImages/s3.jpg",
+			"testImages/s4.jpg",
+			"testImages/s5.jpg"
 		]
 	},
 	"ch002" : {

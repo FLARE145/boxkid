@@ -23,18 +23,25 @@ function getImages(){
 	setting = "page";
 	if (readCookie('scrollFormat') != 'true'){
 		setting = "page";
+		document.getElementById("comicScrollView").remove();
+		imageArray = chapters[getChapter()][setting];
+		setImage(currentPage);
 	} else {
 		setting = "scroll";
+		document.getElementById("comicPageView").remove();
+		imageArray = chapters[getChapter()][setting];
+		viewer = document.getElementById("comicScrollView");
+		//builds scroll version
+		for (let i = 0; i < imageArray.length; i++) {
+			currentImage = imageArray[i];
+			newElement = document.createElement("img");
+			newElement.src = '../' + imageArray[i];
+			viewer.append(newElement);
+		};
 	};
-	//prints list of image urls
-	imageArray = chapters[getChapter()][setting];
-	for (let i = 0; i < imageArray.length; i++) {
-		currentImage = imageArray[i];
-		console.log(currentImage);
-	};
-	setImage(currentPage);
-	return console.log("done");
 };
+
+//for page version
 
 function setImage(pageNumber){
 	let viewer = document.getElementById("comicPageView");
