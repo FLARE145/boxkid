@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+	  <title>BOXKID</title>
+	  <meta name="keywords" content="boxkid, boxkid vs the ocean">
+	  <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+	<div class="window">
+	</div>
+      <main>
+		<div class="logoDiv">
+			<a href="./"><h1>BOXKID VS THE OCEAN</h1></a>
+		</div>
+		<div id="contentWrap">
+			<input type="checkbox" id="scrollCheck" name="scrollCheckbox" onclick="toggleScrollMode()">
+			<label for="scrollCheckbox">Toggle Scroll Format</label>
+		</div>
+		<footer id="footer">
+			<p>©<a href="https://flare145.com" rel="noopener" target="_blank">FLARE145</a> 2023</p>
+		</footer>
+      </main>
+    </body>
+	<script src="cookies.js"></script>
+	<script src="popup.js"></script>
+	<script>
+		function toggleScrollMode(){
+			if (readCookie('scrollFormat') != 'true'){
+				writeCookie('scrollFormat', 'true');
+			} else {
+				deleteCookie('scrollFormat');
+			};
+		};
+		if (readCookie('scrollFormat') === 'true'){
+			  document.getElementById("scrollCheck").checked = true;
+		};
+	</script>
+  </html>
