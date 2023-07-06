@@ -6,7 +6,7 @@ let userChapterUrl = '';
 if (readCookie('userChapter')){
 	userChapter = readCookie('userChapter');
 	console.log(readCookie('userChapter'));
-	userChapterUrl = './' + userChapter;
+	userChapterUrl = '/read/' + userChapter;
 } else{
 	userChapter = 'ch001';
 	writeCookie('userChapter', 'ch001');
@@ -19,7 +19,7 @@ window.onload = function(){
     .then(response => response.json())
     .then(result => {
       latestChapter = result;
-      latestChapterUrl = './' + latestChapter;
+      latestChapterUrl = '/read/' + latestChapter;
 	  document.getElementById("latestChapter").href = latestChapterUrl;
     });
 };
