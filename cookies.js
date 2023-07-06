@@ -3,17 +3,18 @@
 function writeCookie(name, property) {
     document.cookie = name + '=' + property + ';expires=Thu, 01 Jan 2030 00:00:00 GMT ';
 }
-//btw this only works for true/false? just keep in mind
+//thank gpt for improving this from older version
 function readCookie(name) {
 	if (document.cookie !== '') {
 	    let allCookies = document.cookie.split('; ');
-		let expected = name + '=true';
-		if (allCookies.find(row => row.startsWith(name)) === expected) {
-			let cookieValue = allCookies.find(row => row.startsWith(name)).split('=')[1];
-	        return cookieValue;
-		} else{
+		let cookie = allCookies.find(row => row.startsWith(name + '='));
+		if (cookie) {
+			let cookieValue = cookie.split('=')[1];
+			return cookieValue;
+		} else {
 			return false;
-	}}
+		}
+	}
 }
 
 function deleteCookie(name) {
