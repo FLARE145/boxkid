@@ -4,7 +4,6 @@
 	  <title>BOXKID</title>
 	  <meta name="keywords" content="boxkid, boxkid vs the ocean">
 	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -16,11 +15,12 @@
 		</div>
 		<div id="contentWrap">
 			<div class="shortcuts">
-				<a class="selected">Chapters</a><a href="/read">Read</a><a href="/settings">Settings</a>
+					<a href="/chapters">Chapters</a><a class="selected">Read</a><a href="/settings">Settings</a>
 			</div>
 			<div class="listColumn">
-				<p style="font-size:20px;">Select a chapter</p>
-				<a href="./read/ch001">Ch.1</a>
+				<a href="/ch001">Read from the beginning</a>
+				<a id="latestChapter" href="/ch001">Newest Chapter</a>
+				<a id="userChapter" href="./read/ch001">Last Viewed Chapter</a>
 			</div>
 		</div>
 		<footer id="footer">
@@ -29,4 +29,6 @@
       </main>
     </body>
 	<script src="popup.js"></script>
+	<script src="cookies.js"></script>
+	<script src="/chapterData/userChapter.js"></script>
   </html>

@@ -25,6 +25,12 @@ h2{
 	font-family: courier;
 }
 
+label{
+	font-family: arial;
+	font-size: 24px;
+	vertical-align: bottom;
+}
+
 .logoDiv{
 	text-align: center;
 }
@@ -40,6 +46,10 @@ h2{
 }
 
 .shortcuts {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 40px;
+	justify-content: space-evenly;
 	border-style: dotted;
 	border-color: grey;
 	text-align: center;
@@ -50,7 +60,6 @@ h2{
 	font-family: arial black;
 	font-size: 20px;
 	color: black;
-	margin: 0px 30px;
 	padding: 0px 2px;
 	text-decoration: none;
 }
@@ -58,6 +67,11 @@ h2{
 .shortcuts a:hover{
 	background-color: orange;
 	color: white;
+}
+
+a.selected, a.selected:hover{
+	background-color: transparent;
+	color: grey;
 }
 
 #contentWrap{
@@ -83,7 +97,10 @@ h2{
 
 /*chapter select*/
 .listColumn{
-	text-align: -webkit-center;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	row-gap: 30px;
 }
 
 .listColumn a{
@@ -199,4 +216,59 @@ h2{
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+}
+
+/*settings*/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: orange;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px orange;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }

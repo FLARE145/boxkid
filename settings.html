@@ -16,10 +16,13 @@
 		</div>
 		<div id="contentWrap">
 			<div class="shortcuts">
-				<a href="./chapters">Chapters</a><a href="./settings">Settings</a>
+				<a href="./chapters">Chapters</a><a href="/read">Read</a><a class="selected">Settings</a>
 			</div>
-			<input type="checkbox" id="scrollCheck" name="scrollCheckbox" onclick="toggleScrollMode()">
-			<label for="scrollCheckbox">Toggle Scroll Format</label>
+			<label class="switch">
+				<input type="checkbox" id="scrollCheck" onclick="toggleScrollMode()">
+				<span class="slider"></span>
+			</label>
+			<label>Toggle Scrolling Format</label>
 		</div>
 		<footer id="footer">
 			<p>©<a href="https://flare145.com" rel="noopener" target="_blank">FLARE145</a> 2023</p>
