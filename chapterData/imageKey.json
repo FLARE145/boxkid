@@ -1,9 +1,9 @@
 {
 	"ch001" : {
 		"page" : [
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/test01.png",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/test02.png",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/test03.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/1.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/2.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/3.jpg",
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/4.jpg"
 		],
 		"scroll" : [
@@ -16,9 +16,9 @@
 	},
 	"ch002" : {
 		"page" : [
-			"testImages/test01.png",
-			"testImages/test02.png",
-			"testImages/test03.jpg"
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/test01.png",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/test02.png",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/test03.jpg"
 		],
 		"scroll" : [
 			"put the image url here scrollmode",
