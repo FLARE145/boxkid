@@ -1,7 +1,7 @@
 //cookie functions borrowed from flare website
 
 function writeCookie(name, property) {
-    document.cookie = name + '=' + property + ';expires=Thu, 01 Jan 2030 00:00:00 GMT ';
+    document.cookie = name + '=' + property + ';expires=Thu, 01 Jan 2030 00:00:00 GMT;path=/';
 }
 //thank gpt for improving this from older version
 function readCookie(name) {
