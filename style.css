@@ -140,6 +140,12 @@ a.selected, a.selected:hover{
   width: 100%;
 }
 
+@media (min-width:1000px) {
+	#comicPageView{
+		cursor: pointer;
+	}
+}
+
 #comicScrollView{
   display: block;
   margin-left: auto;

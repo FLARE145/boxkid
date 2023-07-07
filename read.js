@@ -46,6 +46,9 @@ function getImages(){
 function setImage(pageNumber){
 	let viewer = document.getElementById("comicPageView");
 	viewer.innerHTML = '<img src="' + imageArray[pageNumber] + '" onlclick="toggleFullscreen()">';
+	if (isDocumentFullscreen()){
+		document.getElementsByClassName("fullscreenImg")[0].innerHTML = '<img src="' + imageArray[pageNumber] + '">';
+	};
 };
 
 function nextPage(){
@@ -71,7 +74,7 @@ function toggleFullscreen(){
 		if (document.getElementsByClassName("fullscreenImg").length < 1){
 			newElement = document.createElement("div");
 			newElement.classList.add("fullscreenImg");
-			newElement.setAttribute("onclick","toggleFullscreen();");
+			//newElement.setAttribute("onclick","toggleFullscreen();");
 			newElement.innerHTML = '<img src="' + imageArray[currentPage] + '">';
 			
 			// Enter fullscreen mode
@@ -107,8 +110,31 @@ function toggleFullscreen(){
 
 //escape deletes elm
 
+document.addEventListener('fullscreenchange', function(event) {
+  if (!isDocumentFullscreen()) {
+    toggleFullscreen();
+  }
+});
+
+// Function to check if the document is in fullscreen mode
+function isDocumentFullscreen() {
+  return (
+    document.fullscreenElement ||
+    document.mozFullScreenElement ||
+    document.webkitFullscreenElement ||
+    document.msFullscreenElement
+  );
+};
+
+//arrow controls
 document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    document.getElementsByClassName("fullscreenImg")[0].remove();
+  if (event.key === 'ArrowRight') {
+    nextPage();
+  }
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowLeft') {
+    previousPage();
   }
 });
