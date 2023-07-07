@@ -25,6 +25,9 @@ function getChapter(){
 function getImages(){
 	//gets format setting from cookie
 	setting = "page";
+	if (readCookie('viewFormat') === false && screen.width < 1000){
+		writeCookie('viewFormat', 'scroll');
+	}
 	if (readCookie('viewFormat') === 'scroll'){
 		setting = "scroll";
 		if (readCookie('fromNext') === 'true'){
