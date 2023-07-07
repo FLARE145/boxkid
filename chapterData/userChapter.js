@@ -2,6 +2,7 @@ let userChapter = 'ch001';
 let latestChapter = '';
 let latestChapterUrl = '';
 let userChapterUrl = '';
+let chapters = {};
 
 
 if (readCookie('userChapter') === undefined){
@@ -17,11 +18,11 @@ if (readCookie('userChapter') === undefined){
 document.getElementById("userChapter").href = userChapterUrl;
 
 window.onload = function(){
-  fetch("/chapterData/latestChapter.txt")
+  fetch("/chapterData/imageKey.json")
     .then(response => response.json())
     .then(result => {
-      latestChapter = result;
-      latestChapterUrl = '/read/' + latestChapter;
+      chapters = result;
+      latestChapterUrl = '/read/' + Object.keys(chapters)[Object.keys(chapters).length - 1];
 	  document.getElementById("latestChapter").href = latestChapterUrl;
     });
 };
