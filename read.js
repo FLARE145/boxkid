@@ -35,7 +35,7 @@ function getImages(){
 		for (let i = 0; i < imageArray.length; i++) {
 			currentImage = imageArray[i];
 			newElement = document.createElement("img");
-			newElement.src = '../' + imageArray[i];
+			newElement.src = imageArray[i];
 			viewer.append(newElement);
 		};
 	};
@@ -45,7 +45,7 @@ function getImages(){
 
 function setImage(pageNumber){
 	let viewer = document.getElementById("comicPageView");
-	viewer.innerHTML = '<img src="../' + imageArray[pageNumber] + '">';
+	viewer.innerHTML = '<img src="' + imageArray[pageNumber] + '">';
 };
 
 function nextPage(){
