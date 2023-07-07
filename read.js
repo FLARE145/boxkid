@@ -16,6 +16,7 @@ window.onload = function(){
 function getChapter(){
 	pageUrl = window.location.href
 	chapterId = pageUrl.substring(pageUrl.search("ch"), pageUrl.search("ch") + 5);
+	deleteCookie('userChapter');
 	writeCookie('userChapter', chapterId);
 	return chapterId;
 };
