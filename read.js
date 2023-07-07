@@ -1,5 +1,6 @@
 let chapters = {};
 let imageArray = [];
+let setting = "";
 let currentPage = 0;
 let totalChapters = 0;
 
@@ -52,13 +53,31 @@ function setImage(pageNumber){
 	};
 };
 
-function nextPage(){
-	if (currentPage >= imageArray.length - 1){
-		let rawChapterNumber = parseInt(getChapter().substring(2,5));
-		if (Object.keys(chapters).length > rawChapterNumber){
-			window.location.href = './' + Object.keys(chapters)[rawChapterNumber];
-		};
+function nextChapter(){
+	let rawChapterNumber = parseInt(getChapter().substring(2,5));
+	if (Object.keys(chapters).length > rawChapterNumber){
+		window.location.href = './' + Object.keys(chapters)[rawChapterNumber];
+	} else {
 		console.log('nothing next');
+	}
+};
+
+function previousChapter(){
+	let rawChapterNumber = parseInt(getChapter().substring(2,5));
+	if (rawChapterNumber > 1){
+		window.location.href = './' + Object.keys(chapters)[rawChapterNumber - 2];
+	} else {
+		console.log('nothing previous');
+	}
+};
+
+function nextPage(){
+	if (setting === "scroll"){
+		nextChapter();
+		return;
+	}
+	if (currentPage >= imageArray.length - 1){
+		nextChapter();
 		return;
 	};
 	currentPage++;
@@ -67,11 +86,7 @@ function nextPage(){
 
 function previousPage(){
 	if (currentPage <= 0){
-		let rawChapterNumber = parseInt(getChapter().substring(2,5));
-		if (rawChapterNumber > 1){
-			window.location.href = './' + Object.keys(chapters)[rawChapterNumber - 2];
-		};
-		console.log('nothing previous');
+		previousChapter();
 		return;
 	};
 	currentPage--;
