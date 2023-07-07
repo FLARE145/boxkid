@@ -16,6 +16,7 @@ window.onload = function(){
 function getChapter(){
 	pageUrl = window.location.href
 	chapterId = pageUrl.substring(pageUrl.search("ch"), pageUrl.search("ch") + 5);
+	writeCookie('userChapter', chapterId);
 	return chapterId;
 };
 
@@ -39,6 +40,12 @@ function getImages(){
 		setting = "page";
 		document.getElementById("comicScrollView").remove();
 		imageArray = chapters[getChapter()][setting];
+		if (readCookie('fromNext') === 'true'){
+			currentPage = imageArray.length - 1;
+			setImage(currentPage);
+			deleteCookie('fromNext');
+			return;
+		};
 		setImage(currentPage);
 	};
 };
@@ -65,6 +72,7 @@ function nextChapter(){
 function previousChapter(){
 	let rawChapterNumber = parseInt(getChapter().substring(2,5));
 	if (rawChapterNumber > 1){
+		writeCookie('fromNext', 'true');
 		window.location.href = './' + Object.keys(chapters)[rawChapterNumber - 2];
 	} else {
 		console.log('nothing previous');

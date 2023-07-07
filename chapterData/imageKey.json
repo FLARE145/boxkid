@@ -21,8 +21,9 @@
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/test03.jpg"
 		],
 		"scroll" : [
-			"put the image url here scrollmode",
-			"next url for image here etc scrollmode"
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s1.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s2.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s3.jpg"
 		]
 	}
 }

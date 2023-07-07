@@ -1,15 +1,17 @@
-let userChapter = '';
+let userChapter = 'ch001';
 let latestChapter = '';
 let latestChapterUrl = '';
 let userChapterUrl = '';
 
-if (readCookie('userChapter')){
+
+if (readCookie('userChapter') === undefined){
+	userChapter = 'ch001';
+	console.log('no userchapter');
+	userChapterUrl = '/read/' + userChapter;
+} else{
 	userChapter = readCookie('userChapter');
 	console.log(readCookie('userChapter'));
 	userChapterUrl = '/read/' + userChapter;
-} else{
-	userChapter = 'ch001';
-	writeCookie('userChapter', 'ch001');
 };
 
 document.getElementById("userChapter").href = userChapterUrl;
