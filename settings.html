@@ -33,13 +33,18 @@
 	<script src="popup.js"></script>
 	<script>
 		function toggleScrollMode(){
-			if (readCookie('scrollFormat') != 'true'){
-				writeCookie('scrollFormat', 'true');
+			if(readCookie){
+				if (readCookie('viewFormat') === 'scroll'){
+					writeCookie('viewFormat', 'page');
+				} else {
+					deleteCookie('viewFormat');
+					writeCookie('viewFormat', 'scroll');
+				};
 			} else {
-				deleteCookie('scrollFormat');
+				writeCookie('viewFormat', 'scroll');
 			};
 		};
-		if (readCookie('scrollFormat') === 'true'){
+		if (readCookie('viewFormat') === 'scroll'){
 			  document.getElementById("scrollCheck").checked = true;
 		};
 	</script>
