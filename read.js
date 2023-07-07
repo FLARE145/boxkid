@@ -27,6 +27,9 @@ function getImages(){
 	setting = "page";
 	if (readCookie('viewFormat') === 'scroll'){
 		setting = "scroll";
+		if (readCookie('fromNext') === 'true'){
+			deleteCookie('fromNext');
+		};
 		document.getElementById("comicPageView").remove();
 		imageArray = chapters[getChapter()][setting];
 		viewer = document.getElementById("comicScrollView");
