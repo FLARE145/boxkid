@@ -29,6 +29,7 @@ label{
 	font-family: arial;
 	font-size: 24px;
 	vertical-align: bottom;
+	text-wrap: nowrap;
 }
 
 .logoDiv{
@@ -248,6 +249,22 @@ a.selected, a.selected:hover{
 }
 
 /*settings*/
+
+#shortcutDropdown{
+	border-style: solid;
+	border-color: #cccccc;
+    border-radius: 0px;
+    border-width: 3.5px;
+    border-size: 6px;
+    height: 34px;
+    font-family: arial;
+    font-size: 20px;
+}
+
+#shortcutDropdown:focus{
+	outline: none;
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;

@@ -24,5 +24,23 @@ window.onload = function(){
       chapters = result;
       latestChapterUrl = '/read/' + Object.keys(chapters)[Object.keys(chapters).length - 1];
 	  document.getElementById("latestChapter").href = latestChapterUrl;
+	  executeShortcut();
     });
+};
+
+function executeShortcut(){
+	if(readCookie('readShortcut')){
+		let heading = readCookie('readShortcut');
+		switch (heading) {
+			case "newestChapter":
+				window.location.href = latestChapterUrl;
+			break;
+			case "lastViewed":
+				window.location.href = userChapterUrl;
+			break;
+			default:
+				console.log("bruh");
+			break;
+		};
+	};
 };

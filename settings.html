@@ -23,6 +23,14 @@
 				<span class="slider"></span>
 			</label>
 			<label>Toggle Scrolling Format</label>
+			<br>
+			<br>
+			<select id="shortcutDropdown" onchange="pickReadOption()">
+				<option value="noneSelected" selected>None Selected</option>
+				<option value="newestChapter">Newest Chapter</option>
+				<option value="lastViewed">Last Viewed</option>
+			</select>
+			<label>Enable Read Page Shortcut</label>
 		</div>
 		<footer id="footer">
 			<p>©<a href="https://flare145.com" rel="noopener" target="_blank">FLARE145</a> 2023</p>
@@ -46,5 +54,46 @@
 		if (readCookie('viewFormat') === 'scroll'){
 			  document.getElementById("scrollCheck").checked = true;
 		};
+		
+		// pick read shortcut
+		
+		function pickReadOption() {
+		  var dropdown = document.getElementById("shortcutDropdown");
+		  var selectedValue = dropdown.value;
+		  
+		  // Do something based on the selected value
+		  switch (selectedValue) {
+			case "newestChapter":
+			  // Code to execute for Newest Chapter
+			  console.log("Newest Chapter selected");
+			  dropdown.style.borderColor = "orange";
+			  deleteCookie('readShortcut');
+			  writeCookie('readShortcut', 'newestChapter');
+			  break;
+			case "lastViewed":
+			  // Code to execute for Last Viewed
+			  console.log("Last Viewed selected");
+			  dropdown.style.borderColor = "orange";
+			  deleteCookie('readShortcut');
+			  writeCookie('readShortcut', 'lastViewed');
+			  break;
+			  case "noneSelected":
+			  // Code to execute for None Selected
+			  console.log("None Selected");
+			  dropdown.style.borderColor = "#ccc";
+			  deleteCookie('readShortcut');
+			  break;
+			default:
+			  // Default code to execute if no option matches
+			  console.log("Invalid option selected");
+			  break;
+		  }
+		};
+		
+		let dropdown = document.getElementById("shortcutDropdown");
+		if (readCookie('readShortcut')){
+			dropdown.value = readCookie('readShortcut');
+		};
+		pickReadOption();
 	</script>
   </html>
