@@ -63,6 +63,7 @@ label{
 	color: black;
 	padding: 0px 2px;
 	text-decoration: none;
+	user-select: none;
 }
 
 .shortcuts a:hover{
