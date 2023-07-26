@@ -87,7 +87,7 @@ a.selected, a.selected:hover{
 	color: grey;
 	padding: 1px;
 	margin: -7px;
-	
+	user-select: none;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -101,7 +101,7 @@ a.selected, a.selected:hover{
 /*chapter select*/
 .listColumn{
 	display: flex;
-	text-align: center;
+	align-items: center;
 	flex-direction: column;
 	row-gap: 30px;
 }
@@ -110,6 +110,7 @@ a.selected, a.selected:hover{
 	font-size: 30px;
 	color: black;
 	text-decoration: none;
+	user-select: none;
 }
 
 .listColumn a:hover{
@@ -128,9 +129,10 @@ a.selected, a.selected:hover{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 12px;
   max-height: 100vw;
-  height: 600px;
-  width: 600px;
+  height: 768px;
+  width: 768px;
   max-width: 100%;
   background-color: white;
   background-image: url(https://flare145.com/res/loading.gif);
@@ -141,6 +143,7 @@ a.selected, a.selected:hover{
 #comicPageView img {
   height: auto;
   width: 100%;
+  box-shadow: 0px 3px 5px 0px #00000029;
 }
 
 @media (min-width:1000px) {
