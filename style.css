@@ -159,15 +159,14 @@ a.selected, a.selected:hover{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 12px;
   height: fit-content;
   max-width: 600px;
   background-color: white;
   background-image: url(/res/loading.png);
   background-size: 80px;
   background-position: center;
-  background-repeat: no-repeat;
   image-rendering: pixelated;
-  filter: opacity(0.5);
 }
 
 #comicScrollView img {
@@ -175,6 +174,7 @@ a.selected, a.selected:hover{
   width: 100%;
   margin-bottom: -4px;
   image-rendering: auto;
+  box-shadow: 0px 3px 5px 0px #00000029;
 }
 
 .fullscreenImg{
@@ -226,6 +226,18 @@ a.selected, a.selected:hover{
 	color: white;
 }
 
+#pageCounter{
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}
+
+#pageCounter p{
+	display: inline-block;
+	margin: 0px;
+	font-family: courier;
+}
+
 /*from flare145 website*/
 .popup {
   display: block;
@@ -259,6 +271,24 @@ a.selected, a.selected:hover{
     background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
+
+.playbackButton{
+	width: 20px;
+	height: 20px;
+	position: fixed;
+	left: 5px;
+	bottom: 5px;
+	background-image: url(./res/vibing.gif);
+	background-size: contain;
+	background-position: center;
+}
+
+
+
+
+
+
+
 
 /*settings*/
 

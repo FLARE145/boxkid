@@ -3,6 +3,7 @@ let imageArray = [];
 let setting = "";
 let currentPage = 0;
 let totalChapters = 0;
+let totalPages = 0;
 
 window.onload = function(){
   fetch("../chapterData/imageKey.json")
@@ -28,6 +29,7 @@ function getImages(){
 	if (readCookie('viewFormat') === false && screen.width < 1000){
 		writeCookie('viewFormat', 'scroll');
 	}
+	//scroll set up
 	if (readCookie('viewFormat') === 'scroll'){
 		setting = "scroll";
 		if (readCookie('fromNext') === 'true'){
@@ -44,9 +46,12 @@ function getImages(){
 			viewer.append(newElement);
 		};
 	} else {
+		//page set up
 		setting = "page";
 		document.getElementById("comicScrollView").remove();
 		imageArray = chapters[getChapter()][setting];
+		totalPages = imageArray.length;
+		document.getElementById("pageCount").innerHTML = totalPages;
 		if (readCookie('fromNext') === 'true'){
 			currentPage = imageArray.length - 1;
 			setImage(currentPage);
@@ -65,6 +70,7 @@ function setImage(pageNumber){
 	if (isDocumentFullscreen()){
 		document.getElementsByClassName("fullscreenImg")[0].innerHTML = '<img src="' + imageArray[pageNumber] + '">';
 	};
+	document.getElementById("pageNumber").innerHTML = currentPage + 1;
 };
 
 function nextChapter(){
