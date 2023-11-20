@@ -242,11 +242,11 @@ a.selected, a.selected:hover{
 .popup {
   display: block;
   position: fixed;
-  margin: 1% auto 4%;
+  margin: 0vh auto;
   left: 0;
   right: 0;
   max-width: min-content;
-  height: -webkit-fill-available;
+  height: 96vh;
   background-color: white;
   background-image: url(https://flare145.com/res/loading.gif);
   background-size: cover;
