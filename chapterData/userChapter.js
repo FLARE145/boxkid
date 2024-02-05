@@ -2,7 +2,7 @@ let userChapter = 'ch001';
 let latestChapter = '';
 let latestChapterUrl = '';
 let userChapterUrl = '';
-let chapters = {};
+let chapterArray = [];
 
 
 if (readCookie('userChapter') === undefined){
@@ -21,8 +21,8 @@ window.onload = function(){
   fetch("/chapterData/imageKey.json")
     .then(response => response.json())
     .then(result => {
-      chapters = result;
-      latestChapterUrl = '/read/' + Object.keys(chapters)[Object.keys(chapters).length - 1];
+      chapterArray = result;
+      latestChapterUrl = '/read/' + chapterArray[chapterArray.length - 1].name;
 	  document.getElementById("latestChapter").href = latestChapterUrl;
 	  executeShortcut();
     });
