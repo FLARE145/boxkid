@@ -20,8 +20,10 @@ window.onload = function(){
 
 //gets chapter from url pathname
 function getChapterName(){
-	pagePath = window.location.pathname;
-	chapterName = pagePath.slice(6, pagePath.length - 5);
+	pagePath = window.location.pathname
+	//FOR TESTING LOCALLY, UNCOMMENT THE NEXT LINE AND COMMENT THE ONE THAT FOLLOWS
+	//chapterName = pagePath.slice(6, pagePath.length - 5);
+	chapterName = pagePath.slice(6, pagePath.length);
 	//sets cookie stuff
 	deleteCookie('userChapter');
 	writeCookie('userChapter', chapterName);
