@@ -1,28 +1,21 @@
-{
-	"ch001" : {
-		"page" : [
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/1.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/2.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/3.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/4.jpg"
+[
+	{
+		"name": "ch001",
+		"page": [
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00101.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00102.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00103.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00104.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00105.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00106.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00107.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00108.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00109.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00110.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00111.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/p00112.jpg"
 		],
-		"scroll" : [
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/s1.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/s2.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/s3.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/s4.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/s5.jpg"
-		]
-	},
-	"ch002" : {
-		"page" : [
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/test01.png",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/test02.png",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/test03.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/testpage1.jpg",
-			"https://storage.googleapis.com/flare145.com/boxkid-pages/testpage2.jpg"
-		],
-		"scroll" : [
+		"scroll": [
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/s00101.jpg",
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/s00102.jpg",
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/s00103.jpg",
@@ -30,5 +23,21 @@
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/s00105.jpg",
 			"https://storage.googleapis.com/flare145.com/boxkid-pages/s00106.jpg"
 		]
+	},
+	{
+		"name": "ch002",
+		"page": [
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/1.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/2.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/3.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/4.jpg"
+		],
+		"scroll": [
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s1.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s2.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s3.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s4.jpg",
+			"https://storage.googleapis.com/flare145.com/boxkid-pages/s5.jpg"
+		]
 	}
-}
+]

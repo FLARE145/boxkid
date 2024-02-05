@@ -1,28 +1,45 @@
-let chapters = {};
+//variables
+let chapterArray = [];
 let imageArray = [];
 let setting = "";
 let currentPage = 0;
 let totalChapters = 0;
 let totalPages = 0;
 
+//runs on load
 window.onload = function(){
   fetch("../chapterData/imageKey.json")
     .then(response => response.json())
     .then(result => {
-      chapters = result;
+	  //chapterArray becomes an array of objects with chapter info
+      chapterArray = result;
       getImages();
     });
 };
 
-function getChapter(){
-	pageUrl = window.location.href
-	chapterId = pageUrl.substring(pageUrl.search("ch"), pageUrl.search("ch") + 5);
+
+//gets chapter from url pathname
+function getChapterName(){
+	pagePath = window.location.pathname;
+	chapterName = pagePath.slice(6, pagePath.length - 5);
+	//sets cookie stuff
 	deleteCookie('userChapter');
-	writeCookie('userChapter', chapterId);
-	return chapterId;
+	writeCookie('userChapter', chapterName);
+	return chapterName;
+};
+
+//gets chapter info object based on the name of the chapter
+function getChapterObject(name){
+	return chapterArray.find(chapter => chapter.name === name);
+};
+
+//gets chapter object index
+function getChapterIndex(name){
+	return chapterArray.findIndex(chapter => chapter.name === name);
 };
 
 
+//called in the onload function  does the important work
 function getImages(){
 	//gets format setting from cookie
 	setting = "page";
@@ -32,11 +49,12 @@ function getImages(){
 	//scroll set up
 	if (readCookie('viewFormat') === 'scroll'){
 		setting = "scroll";
+		//from next is not needed in scroll mode
 		if (readCookie('fromNext') === 'true'){
 			deleteCookie('fromNext');
 		};
 		document.getElementById("comicPageView").remove();
-		imageArray = chapters[getChapter()][setting];
+		imageArray = getChapterObject(getChapterName())[setting];
 		viewer = document.getElementById("comicScrollView");
 		//builds scroll version
 		for (let i = 0; i < imageArray.length; i++) {
@@ -49,7 +67,7 @@ function getImages(){
 		//page set up
 		setting = "page";
 		document.getElementById("comicScrollView").remove();
-		imageArray = chapters[getChapter()][setting];
+		imageArray = getChapterObject(getChapterName())[setting];
 		totalPages = imageArray.length;
 		document.getElementById("pageCount").innerHTML = totalPages;
 		if (readCookie('fromNext') === 'true'){
@@ -73,25 +91,6 @@ function setImage(pageNumber){
 	document.getElementById("pageNumber").innerHTML = currentPage + 1;
 };
 
-function nextChapter(){
-	let rawChapterNumber = parseInt(getChapter().substring(2,5));
-	if (Object.keys(chapters).length > rawChapterNumber){
-		window.location.href = './' + Object.keys(chapters)[rawChapterNumber];
-	} else {
-		console.log('nothing next');
-	}
-};
-
-function previousChapter(){
-	let rawChapterNumber = parseInt(getChapter().substring(2,5));
-	if (rawChapterNumber > 1){
-		writeCookie('fromNext', 'true');
-		window.location.href = './' + Object.keys(chapters)[rawChapterNumber - 2];
-	} else {
-		console.log('nothing previous');
-	}
-};
-
 function nextPage(){
 	if (setting === "scroll"){
 		nextChapter();
@@ -112,6 +111,27 @@ function previousPage(){
 	};
 	currentPage--;
 	setImage(currentPage);
+};
+
+//next and previous chapter stuff
+
+function nextChapter(){
+	let chapterIndex = getChapterIndex(getChapterName());
+	if (chapterArray.length > chapterIndex +1){
+		window.location.href = './' + chapterArray[chapterIndex + 1].name;
+	} else {
+		console.log('nothing next');
+	}
+};
+
+function previousChapter(){
+	let chapterIndex = getChapterIndex(getChapterName());
+	if (chapterIndex > 0){
+		writeCookie('fromNext', 'true');
+		window.location.href = './' + chapterArray[chapterIndex - 1].name;
+	} else {
+		console.log('nothing previous');
+	}
 };
 
 //fullscreen stuff
