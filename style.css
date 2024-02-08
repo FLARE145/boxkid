@@ -1,5 +1,27 @@
+:root{
+	--bgColor: white;
+	--pColor: black;
+	--h1Color: black;
+	--shortcutColor: black;
+	--buttonBorderColor: #cccccc;
+	--buttonBackgroundColor: white;
+	--sliderBackgroundColor: #ccc;
+}
+.darkTheme{
+	--bgColor: #161616;
+	--pColor: #bdbdbd;
+	--h1Color: white;
+	--shortcutColor: #bdbdbd;
+	--buttonBorderColor: #5d5d5d;
+	--buttonBackgroundColor: #3d3d3d;
+	--sliderBackgroundColor: #3d3d3d;
+}
+
+
+
+
 body {
-	background-color: white;
+	background-color: var(--bgColor);
 }
 
 main{
@@ -11,6 +33,7 @@ p{
 	margin: 20px;
 	max-width: 800px;
 	font-family: arial;
+	color: var(--pColor);
 }
 
 a{
@@ -19,10 +42,12 @@ a{
 
 h1{
 	font-family: courier;
+	color: var(--h1Color);
 }
 
 h2{
 	font-family: courier;
+	color: var(--h1Color);
 }
 
 label{
@@ -30,6 +55,7 @@ label{
 	font-size: 24px;
 	vertical-align: bottom;
 	text-wrap: nowrap;
+	color: var(--pColor);
 }
 
 .logoDiv{
@@ -43,7 +69,8 @@ label{
 
 .logoDiv a:hover{
 	text-decoration: none;
-	color: orange;
+	color: orange !important;
+	--h1Color: orange;
 }
 
 .shortcuts {
@@ -60,7 +87,7 @@ label{
 .shortcuts a{
 	font-family: arial black;
 	font-size: 20px;
-	color: black;
+	color: var(--shortcutColor);
 	padding: 0px 2px;
 	text-decoration: none;
 	user-select: none;
@@ -95,6 +122,10 @@ a.selected, a.selected:hover{
 
 #footer a{
 	text-decoration: none;
+	color: grey;
+}
+
+#footer p{
 	color: grey;
 }
 
@@ -294,7 +325,9 @@ a.selected, a.selected:hover{
 
 #shortcutDropdown{
 	border-style: solid;
-	border-color: #cccccc;
+	border-color: var(--buttonBorderColor);
+	background-color: var(--buttonBackgroundColor);
+	color: var(--pColor);
     border-radius: 0px;
     border-width: 3.5px;
     border-size: 6px;
@@ -330,7 +363,7 @@ a.selected, a.selected:hover{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--sliderBackgroundColor);
   -webkit-transition: .4s;
   transition: .4s;
 }
