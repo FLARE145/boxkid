@@ -139,7 +139,7 @@ a.selected, a.selected:hover{
 
 .listColumn a{
 	font-size: 30px;
-	color: black;
+	color: var(--shortcutColor);
 	text-decoration: none;
 	user-select: none;
 }
