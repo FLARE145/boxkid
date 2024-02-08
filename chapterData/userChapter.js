@@ -28,7 +28,7 @@ window.onload = function(){
     });
 };
 
-function executeShortcut(){
+/*function executeShortcut(){
 	if(readCookie('readShortcut')){
 		let heading = readCookie('readShortcut');
 		switch (heading) {
@@ -43,4 +43,4 @@ function executeShortcut(){
 			break;
 		};
 	};
-};
+};*/

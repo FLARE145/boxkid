@@ -23,14 +23,16 @@
 				<span class="slider"></span>
 			</label>
 			<label>Toggle Scrolling Format</label>
+			<!--
 			<br>
 			<br>
+			--------keeping this in case i add a similar selector-----------
 			<select id="shortcutDropdown" onchange="pickReadOption()">
 				<option value="noneSelected" selected>None Selected</option>
 				<option value="newestChapter">Newest Chapter</option>
 				<option value="lastViewed">Last Viewed</option>
 			</select>
-			<label>Enable Read Page Shortcut</label>
+			<label>Enable Read Page Shortcut</label>--->
 		</div>
 		<footer id="footer">
 			<p>©2023 <a href="https://flare145.com" rel="noopener" target="_blank">FLARE145</a></p>
@@ -55,8 +57,8 @@
 			  document.getElementById("scrollCheck").checked = true;
 		};
 		
-		// pick read shortcut
-		
+		// pick read shortcut -----old
+		/*
 		function pickReadOption() {
 		  var dropdown = document.getElementById("shortcutDropdown");
 		  var selectedValue = dropdown.value;
@@ -94,6 +96,6 @@
 		if (readCookie('readShortcut')){
 			dropdown.value = readCookie('readShortcut');
 		};
-		pickReadOption();
+		pickReadOption();*/
 	</script>
   </html>
