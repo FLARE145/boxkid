@@ -23,6 +23,13 @@
 				<span class="slider"></span>
 			</label>
 			<label>Toggle Scrolling Format</label>
+			<br>
+			<br>
+			<label class="switch">
+				<input type="checkbox" id="darkThemeCheck" onclick="toggleDarkTheme()">
+				<span class="slider"></span>
+			</label>
+			<label>Toggle Dark Theme</label>
 			<!--
 			<br>
 			<br>
@@ -55,6 +62,20 @@
 		};
 		if (readCookie('viewFormat') === 'scroll'){
 			  document.getElementById("scrollCheck").checked = true;
+		};
+		
+		function toggleDarkTheme(){
+			if (readCookie('darkTheme') === 'true'){
+				deleteCookie('darkTheme');
+				document.getElementsByTagName('body')[0].classList.remove('darkTheme');
+			} else {
+				writeCookie('darkTheme', 'true');
+				document.getElementsByTagName('body')[0].classList.add('darkTheme');
+			};
+		};
+		if (readCookie('darkTheme') === 'true'){
+			document.getElementById("darkThemeCheck").checked = true;
+			document.getElementsByTagName('body')[0].classList.add('darkTheme');
 		};
 		
 		// pick read shortcut -----old
